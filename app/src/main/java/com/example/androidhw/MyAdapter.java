@@ -1,7 +1,6 @@
 package com.example.androidhw;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +8,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<Video> dataSet;
@@ -59,12 +58,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent=new Intent();
                 intent.putExtra("feedurl", dataSet.get(position).feedurl);
                 intent.putExtra("_id",dataSet.get(position)._id);
-                intent.putExtra("nickname",dataSet.get(position).nickname);
-                intent.putExtra("description",dataSet.get(position).description);
-                intent.putExtra("likecount",dataSet.get(position).likecount);
                 intent.putExtra("avatar",dataSet.get(position).avatar);
-//                intent.setClass(activity,MainActivity.class);
-//                activity.startActivity(intent);
+                intent.putExtra("description",dataSet.get(position).description);
+                intent.putExtra("nickname",dataSet.get(position).nickname);
+                intent.putExtra("likecount",dataSet.get(position).likecount);
+                intent.setClass(activity,ItemDetailActivity.class);
+                activity.startActivity(intent);
             }
         });
     }

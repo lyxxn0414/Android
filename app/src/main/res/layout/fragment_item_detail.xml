@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/materialcolorpicker__black">
+
+    <VideoView
+        android:id="@+id/videoPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/hello" />
+
+        <com.example.androidhw.like.LikeButton
+            android:id="@+id/likeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:icon_size="20dp"
+            app:icon_type="heart"
+            app:like_drawable="@drawable/heart_on"
+            app:unlike_drawable="@drawable/heart_off" />
+
+        <TextView
+            android:id="@+id/likenum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="1.2W"
+            android:textColor="#fff" />
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/ic_message_black_24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="4800"
+            android:textColor="#fff" />
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/ic_share_black_24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="253"
+            android:textColor="#fff"
+            android:layout_marginBottom="180dp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
