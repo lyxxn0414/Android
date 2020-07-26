@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidHw</string>
+    <string name="play">play</string>
+    <string name="avatar">avatar</string>
 </resources>

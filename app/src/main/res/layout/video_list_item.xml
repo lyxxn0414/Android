@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/video_item_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/avatar"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/avatar" />
+
+    <TextView
+        android:id="@+id/video_item_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="20sp"
+        tools:text="王火火"
+        android:textColor="#ffffff"/>
+
+    <ImageButton
+        android:id="@+id/video_item_play_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/play"
+        android:scaleType="fitXY"
+        android:background="@drawable/play_button" />
+</FrameLayout>
