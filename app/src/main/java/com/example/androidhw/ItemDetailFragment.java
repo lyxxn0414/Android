@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,12 +18,16 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.Adapter;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.androidhw.like.CircleView;
@@ -38,6 +43,11 @@ public class ItemDetailFragment extends Fragment {
 	private Video item;
 	private LikeButton likeButton;
 	private static int time=0;
+	private View gift;
+	private String[] gift_items={"rocket","race car"};
+	private static ItemDetailActivity detailActivity;
+	private static LottieAnimationView rocket_anim,present_anim,pumpkin_anim;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +63,7 @@ public class ItemDetailFragment extends Fragment {
 		likeButton=view.findViewById(R.id.likeBtn);
 		VideoView videoView=view.findViewById(R.id.videoPlayer);
 		videoView.setVideoURI(Uri.parse(item.feedurl));
+		gift=view.findViewById(R.id.gift);
 		like.setText(""+item.likecount);
 		MediaController mc = new MediaController(this.getContext());
 		videoView.setMediaController(mc);
@@ -77,14 +88,59 @@ public class ItemDetailFragment extends Fragment {
 				}
 			}
 		});
+		gift.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				detailActivity.showPop(view.findViewById(R.id.flDetailContainer));
+			}
+		});
+		rocket_anim=view.findViewById(R.id.rocket_animation);
+		present_anim=view.findViewById(R.id.present_anim);
+		pumpkin_anim=view.findViewById(R.id.pumpkin_anim);
 		return view;
 	}
     
-    public static ItemDetailFragment newInstance(Video item) {
+    public static ItemDetailFragment newInstance(Video item,ItemDetailActivity activity) {
     	ItemDetailFragment fragmentDemo = new ItemDetailFragment();
         Bundle args = new Bundle();
         args.putSerializable("video", (Serializable) item);
         fragmentDemo.setArguments(args);
+        detailActivity=activity;
         return fragmentDemo;
     }
+
+    public static void playRocket(){
+		rocket_anim.setVisibility(View.VISIBLE);
+		rocket_anim.playAnimation();
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				rocket_anim.setVisibility(View.INVISIBLE);
+			}
+		},2000);
+	}
+	public static void playPresent(){
+		present_anim.setVisibility(View.VISIBLE);
+		present_anim.playAnimation();
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				present_anim.setVisibility(View.INVISIBLE);
+			}
+		},2000);
+	}
+
+	public static void playPumpkin(){
+		pumpkin_anim.setVisibility(View.VISIBLE);
+		pumpkin_anim.playAnimation();
+		new Handler().postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				pumpkin_anim.setVisibility(View.INVISIBLE);
+			}
+		},2000);
+	}
+
+
+
 }

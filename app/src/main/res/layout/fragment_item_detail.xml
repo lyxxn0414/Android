@@ -18,8 +18,36 @@
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/heart_with_particles" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/rocket_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/rocket_fast"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/present_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/present" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/pumpkin_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/pumpkin"
+        android:visibility="invisible"/>
+
     <LinearLayout
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="bottom|center"
         android:layout_alignParentEnd="true"
@@ -70,10 +98,14 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="253"
-            android:textColor="#fff"
-            android:layout_marginBottom="180dp"/>
-
-
+            android:textColor="#fff" />
+        <View
+            android:id="@+id/gift"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_gift"
+            android:layout_marginBottom="180dp">
+        </View>
     </LinearLayout>
-
 </RelativeLayout>
