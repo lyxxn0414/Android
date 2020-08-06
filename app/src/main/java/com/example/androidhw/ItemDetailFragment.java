@@ -64,11 +64,16 @@ public class ItemDetailFragment extends Fragment {
 		VideoView videoView=view.findViewById(R.id.videoPlayer);
 		videoView.setVideoURI(Uri.parse(item.feedurl));
 		gift=view.findViewById(R.id.gift);
+		String num=""+item.likecount;
 		like.setText(""+item.likecount);
-		MediaController mc = new MediaController(this.getContext());
+		if(item.likecount>=10000){
+			like.setText(num.substring(0,num.length()-4)+"W");
+		}
+		LottieAnimationView lottieAnimationView=view.findViewById(R.id.animation_view);
+		MediaController mc = new MediaController(this.getContext());;
 		videoView.setMediaController(mc);
 		videoView.start();
-		LottieAnimationView lottieAnimationView=view.findViewById(R.id.animation_view);
+		videoView.requestFocus();
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {

@@ -31,4 +31,13 @@
         android:contentDescription="@string/play"
         android:scaleType="fitXY"
         android:background="@drawable/play_button" />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_gravity="bottom"
+        android:textSize="10sp"
+        tools:text="描述"
+        android:textColor="#ffffff"/>
 </FrameLayout>

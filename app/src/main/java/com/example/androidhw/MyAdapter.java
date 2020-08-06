@@ -28,12 +28,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public ImageView avatar;
         public TextView nickname;
         public ImageButton play;
+        public TextView description;
 
         public MyViewHolder(View v){
             super(v);
             avatar=v.findViewById(R.id.video_item_avatar);
             nickname=v.findViewById(R.id.video_item_nickname);
             play=v.findViewById(R.id.video_item_play_button);
+            description=v.findViewById(R.id.description);
         }
     }
 
@@ -52,6 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int position){
         loadImage(viewHolder,dataSet.get(position).avatar);
         viewHolder.nickname.setText(dataSet.get(position).nickname);
+        viewHolder.description.setText(dataSet.get(position).description);
         viewHolder.play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
