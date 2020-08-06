@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 
-import com.airbnb.lottie.LottieAnimationView;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 public class ItemDetailActivity extends FragmentActivity {
 	ItemDetailFragment fragmentItemDetail;
-	LottieAnimationView rocket,race_car;
 	GiftPopWindow giftPopWindow;
 
 	@Override
@@ -31,7 +29,6 @@ public class ItemDetailActivity extends FragmentActivity {
 			ft.replace(R.id.flDetailContainer, fragmentItemDetail);
 			ft.commit();
 		}
-		rocket=findViewById(R.id.rocket_animation);
 	}
 
 	public void showPop(View view){
