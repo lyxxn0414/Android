@@ -44,6 +44,7 @@ public class ItemDetailFragment extends Fragment {
 	private LikeButton likeButton;
 	private static int time=0;
 	private View gift;
+	private TextView textView;
 	private String[] gift_items={"rocket","race car"};
 	private static ItemDetailActivity detailActivity;
 	private static LottieAnimationView rocket_anim,present_anim,pumpkin_anim;
@@ -60,6 +61,7 @@ public class ItemDetailFragment extends Fragment {
 							 Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_item_detail, container, false);
 		TextView like=view.findViewById(R.id.likenum);
+		textView=view.findViewById(R.id.description2);
 		likeButton=view.findViewById(R.id.likeBtn);
 		VideoView videoView=view.findViewById(R.id.videoPlayer);
 		videoView.setVideoURI(Uri.parse(item.feedurl));
@@ -69,6 +71,8 @@ public class ItemDetailFragment extends Fragment {
 		if(item.likecount>=10000){
 			like.setText(num.substring(0,num.length()-4)+"W");
 		}
+		textView.setText("@"+item.nickname+"\n\n");
+		textView.append(item.description+"\n");
 		LottieAnimationView lottieAnimationView=view.findViewById(R.id.animation_view);
 		MediaController mc = new MediaController(this.getContext());;
 		videoView.setMediaController(mc);
